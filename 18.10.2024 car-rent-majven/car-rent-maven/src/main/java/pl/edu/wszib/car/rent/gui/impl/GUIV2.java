@@ -3,6 +3,7 @@ package pl.edu.wszib.car.rent.gui.impl;
 import pl.edu.wszib.car.rent.gui.IGUI;
 import pl.edu.wszib.car.rent.model.Car;
 import pl.edu.wszib.car.rent.model.User;
+import pl.edu.wszib.car.rent.model.Vehicle;
 
 import java.util.List;
 import java.util.Scanner;
@@ -20,11 +21,11 @@ public class GUIV2 implements IGUI {
     }
 
     @Override
-    public void listCars(List<Car> cars){
-        for(Car car : cars){
-            System.out.println(car.getBrand()+" "+car.getModel()+" "+
-                    car.getColor()+" "+car.getYear()+" "+car.getPlate()+" "+
-                    car.isRent());
+    public void listVehicles(List<Vehicle> vehicles){
+        for(Vehicle vehicle : vehicles){
+            System.out.println(vehicle.getBrand()+" "+vehicle.getModel()+" "+
+                    vehicle.getColor()+" "+vehicle.getYear()+" "+vehicle.getPlate()+" "+
+                    vehicle.isRent());
         }
     }
 

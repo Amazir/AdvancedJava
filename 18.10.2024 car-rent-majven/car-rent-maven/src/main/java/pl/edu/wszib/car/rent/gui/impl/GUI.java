@@ -2,7 +2,9 @@ package pl.edu.wszib.car.rent.gui.impl;
 
 import pl.edu.wszib.car.rent.gui.IGUI;
 import pl.edu.wszib.car.rent.model.Car;
+import pl.edu.wszib.car.rent.model.Truck;
 import pl.edu.wszib.car.rent.model.User;
+import pl.edu.wszib.car.rent.model.Vehicle;
 
 import java.util.List;
 import java.util.Scanner;
@@ -26,11 +28,16 @@ public class GUI implements IGUI {
     }
 
     @Override
-    public void listCars(List<Car> cars){
-        for(Car car : cars){
-            System.out.println(car.getBrand()+" "+car.getModel()+" "+
-                    car.getColor()+" "+car.getYear()+" "+car.getPlate()+" "+
-                    car.isRent());
+    public void listVehicles(List<Vehicle> vehicles){
+        for(Vehicle vehicle : vehicles){
+            final String SEPARATOR = " ";
+            StringBuilder sb = new StringBuilder();
+
+            String result = sb.append(vehicle.getBrand()).append(SEPARATOR).append(vehicle.getModel()).append(SEPARATOR)
+                    .append(vehicle.getColor()).append(SEPARATOR).append(vehicle.getYear()).append(SEPARATOR).append(vehicle.getPlate())
+                    .append(SEPARATOR).append(vehicle.isRent()).append(SEPARATOR).append(vehicle.isRent() ? "wynajety":"Nie wynajety").append(SEPARATOR).append(vehicle instanceof Truck ? ((Truck) vehicle).getCapacity() : SEPARATOR).toString();
+
+            System.out.println(result);
         }
     }
 

@@ -17,6 +17,7 @@ import pl.edu.wszib.car.rent.core.impl.Core;
     - MD5
     - Tęczowe tablice
     - Poprzykrywać interfesjami
+    - Kompozycja
 
     https://mvnrepository.com/search?q=commons-codec
  */
